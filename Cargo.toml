@@ -1,0 +1,14 @@
+[package]
+name = "tuple_unpack"
+version = "1.0.0"
+edition = "2021"
+description = "Unpack tuples"
+
+[lib]
+name = "tuple_unpack"
+
+[[bin]]
+name = "generate"
+
+[dependencies]
+seq-macro = "0.3.1"
