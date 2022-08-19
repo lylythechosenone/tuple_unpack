@@ -1,6 +1,6 @@
 [package]
 name = "tuple_unpack"
-version = "1.0.0"
+version = "1.0.1"
 edition = "2021"
 description = "Unpack tuples"
 license = "GPL-3.0"
