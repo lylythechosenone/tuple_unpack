@@ -13,7 +13,7 @@ fn generate() -> String {
             write!(&mut buffer, "T{},", j).unwrap();
         }
         writeln!(&mut buffer, ") {{").unwrap();
-        writeln!(&mut buffer, "    fn unpack_types(&self) -> Vec<TypeId> {{",).unwrap();
+        writeln!(&mut buffer, "    fn unpack_types() -> Vec<TypeId> {{",).unwrap();
         write!(&mut buffer, "        vec![").unwrap();
         for j in 0..i {
             write!(&mut buffer, "TypeId::of::<T{}>(),", j).unwrap();

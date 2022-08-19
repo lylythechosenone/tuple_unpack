@@ -3,11 +3,11 @@
 use std::any::{Any, TypeId};
 
 pub trait TupleUnpack {
-    fn unpack_types(&self) -> Vec<TypeId>;
+    fn unpack_types() -> Vec<TypeId>;
     fn unpack_data(&self) -> Vec<&dyn Any>;
 }
 impl<T0: 'static> TupleUnpack for (T0,) {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![TypeId::of::<T0>()]
     }
     fn unpack_data(&self) -> Vec<&dyn Any> {
@@ -15,7 +15,7 @@ impl<T0: 'static> TupleUnpack for (T0,) {
     }
 }
 impl<T0: 'static, T1: 'static> TupleUnpack for (T0, T1) {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![TypeId::of::<T0>(), TypeId::of::<T1>()]
     }
     fn unpack_data(&self) -> Vec<&dyn Any> {
@@ -23,7 +23,7 @@ impl<T0: 'static, T1: 'static> TupleUnpack for (T0, T1) {
     }
 }
 impl<T0: 'static, T1: 'static, T2: 'static> TupleUnpack for (T0, T1, T2) {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![TypeId::of::<T0>(), TypeId::of::<T1>(), TypeId::of::<T2>()]
     }
     fn unpack_data(&self) -> Vec<&dyn Any> {
@@ -31,7 +31,7 @@ impl<T0: 'static, T1: 'static, T2: 'static> TupleUnpack for (T0, T1, T2) {
     }
 }
 impl<T0: 'static, T1: 'static, T2: 'static, T3: 'static> TupleUnpack for (T0, T1, T2, T3) {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -46,7 +46,7 @@ impl<T0: 'static, T1: 'static, T2: 'static, T3: 'static> TupleUnpack for (T0, T1
 impl<T0: 'static, T1: 'static, T2: 'static, T3: 'static, T4: 'static> TupleUnpack
     for (T0, T1, T2, T3, T4)
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -62,7 +62,7 @@ impl<T0: 'static, T1: 'static, T2: 'static, T3: 'static, T4: 'static> TupleUnpac
 impl<T0: 'static, T1: 'static, T2: 'static, T3: 'static, T4: 'static, T5: 'static> TupleUnpack
     for (T0, T1, T2, T3, T4, T5)
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -79,7 +79,7 @@ impl<T0: 'static, T1: 'static, T2: 'static, T3: 'static, T4: 'static, T5: 'stati
 impl<T0: 'static, T1: 'static, T2: 'static, T3: 'static, T4: 'static, T5: 'static, T6: 'static>
     TupleUnpack for (T0, T1, T2, T3, T4, T5, T6)
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -107,7 +107,7 @@ impl<
         T7: 'static,
     > TupleUnpack for (T0, T1, T2, T3, T4, T5, T6, T7)
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -137,7 +137,7 @@ impl<
         T8: 'static,
     > TupleUnpack for (T0, T1, T2, T3, T4, T5, T6, T7, T8)
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -169,7 +169,7 @@ impl<
         T9: 'static,
     > TupleUnpack for (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9)
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -204,7 +204,7 @@ impl<
         T10: 'static,
     > TupleUnpack for (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10)
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -241,7 +241,7 @@ impl<
         T11: 'static,
     > TupleUnpack for (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11)
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -280,7 +280,7 @@ impl<
         T12: 'static,
     > TupleUnpack for (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12)
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -321,7 +321,7 @@ impl<
         T13: 'static,
     > TupleUnpack for (T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13)
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -381,7 +381,7 @@ impl<
         T14,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -444,7 +444,7 @@ impl<
         T15,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -510,7 +510,7 @@ impl<
         T16,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -579,7 +579,7 @@ impl<
         T17,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -652,7 +652,7 @@ impl<
         T18,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -728,7 +728,7 @@ impl<
         T19,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -807,7 +807,7 @@ impl<
         T20,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -889,7 +889,7 @@ impl<
         T21,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -974,7 +974,7 @@ impl<
         T22,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -1062,7 +1062,7 @@ impl<
         T23,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -1153,7 +1153,7 @@ impl<
         T24,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -1247,7 +1247,7 @@ impl<
         T25,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -1345,7 +1345,7 @@ impl<
         T26,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -1446,7 +1446,7 @@ impl<
         T27,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -1550,7 +1550,7 @@ impl<
         T28,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -1657,7 +1657,7 @@ impl<
         T29,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -1767,7 +1767,7 @@ impl<
         T30,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -1880,7 +1880,7 @@ impl<
         T31,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -1996,7 +1996,7 @@ impl<
         T32,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -2115,7 +2115,7 @@ impl<
         T33,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -2238,7 +2238,7 @@ impl<
         T34,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -2364,7 +2364,7 @@ impl<
         T35,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -2493,7 +2493,7 @@ impl<
         T36,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -2625,7 +2625,7 @@ impl<
         T37,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -2760,7 +2760,7 @@ impl<
         T38,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -2898,7 +2898,7 @@ impl<
         T39,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -3039,7 +3039,7 @@ impl<
         T40,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -3183,7 +3183,7 @@ impl<
         T41,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -3331,7 +3331,7 @@ impl<
         T42,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -3482,7 +3482,7 @@ impl<
         T43,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -3636,7 +3636,7 @@ impl<
         T44,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -3793,7 +3793,7 @@ impl<
         T45,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -3953,7 +3953,7 @@ impl<
         T46,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -4116,7 +4116,7 @@ impl<
         T47,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -4282,7 +4282,7 @@ impl<
         T48,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -4451,7 +4451,7 @@ impl<
         T49,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -4624,7 +4624,7 @@ impl<
         T50,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -4800,7 +4800,7 @@ impl<
         T51,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -4979,7 +4979,7 @@ impl<
         T52,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -5161,7 +5161,7 @@ impl<
         T53,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -5346,7 +5346,7 @@ impl<
         T54,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -5534,7 +5534,7 @@ impl<
         T55,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -5725,7 +5725,7 @@ impl<
         T56,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -5919,7 +5919,7 @@ impl<
         T57,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -6117,7 +6117,7 @@ impl<
         T58,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -6318,7 +6318,7 @@ impl<
         T59,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -6522,7 +6522,7 @@ impl<
         T60,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -6729,7 +6729,7 @@ impl<
         T61,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -6939,7 +6939,7 @@ impl<
         T62,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -7152,7 +7152,7 @@ impl<
         T63,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -7368,7 +7368,7 @@ impl<
         T64,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -7587,7 +7587,7 @@ impl<
         T65,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -7810,7 +7810,7 @@ impl<
         T66,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -8036,7 +8036,7 @@ impl<
         T67,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -8265,7 +8265,7 @@ impl<
         T68,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -8497,7 +8497,7 @@ impl<
         T69,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -8732,7 +8732,7 @@ impl<
         T70,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -8970,7 +8970,7 @@ impl<
         T71,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -9211,7 +9211,7 @@ impl<
         T72,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -9455,7 +9455,7 @@ impl<
         T73,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -9703,7 +9703,7 @@ impl<
         T74,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -9954,7 +9954,7 @@ impl<
         T75,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -10208,7 +10208,7 @@ impl<
         T76,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -10465,7 +10465,7 @@ impl<
         T77,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -10725,7 +10725,7 @@ impl<
         T78,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -10988,7 +10988,7 @@ impl<
         T79,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -11254,7 +11254,7 @@ impl<
         T80,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -11523,7 +11523,7 @@ impl<
         T81,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -11796,7 +11796,7 @@ impl<
         T82,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -12072,7 +12072,7 @@ impl<
         T83,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -12351,7 +12351,7 @@ impl<
         T84,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -12633,7 +12633,7 @@ impl<
         T85,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -12918,7 +12918,7 @@ impl<
         T86,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -13206,7 +13206,7 @@ impl<
         T87,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -13497,7 +13497,7 @@ impl<
         T88,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -13791,7 +13791,7 @@ impl<
         T89,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -14089,7 +14089,7 @@ impl<
         T90,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -14390,7 +14390,7 @@ impl<
         T91,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -14694,7 +14694,7 @@ impl<
         T92,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -15001,7 +15001,7 @@ impl<
         T93,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -15311,7 +15311,7 @@ impl<
         T94,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -15624,7 +15624,7 @@ impl<
         T95,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -15940,7 +15940,7 @@ impl<
         T96,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -16259,7 +16259,7 @@ impl<
         T97,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -16582,7 +16582,7 @@ impl<
         T98,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
@@ -16908,7 +16908,7 @@ impl<
         T99,
     )
 {
-    fn unpack_types(&self) -> Vec<TypeId> {
+    fn unpack_types() -> Vec<TypeId> {
         vec![
             TypeId::of::<T0>(),
             TypeId::of::<T1>(),
