@@ -3,6 +3,10 @@ name = "tuple_unpack"
 version = "1.0.0"
 edition = "2021"
 description = "Unpack tuples"
+license = "GPL-3.0"
+homepage = "https://github.com/lylythechosenone/tuple_unpack"
+repository = "https://github.com/lylythechosenone/tuple_unpack"
+readme = "README.md"
 
 [lib]
 name = "tuple_unpack"
